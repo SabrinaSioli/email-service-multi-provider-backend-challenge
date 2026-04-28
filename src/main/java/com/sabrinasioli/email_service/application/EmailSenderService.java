@@ -12,12 +12,13 @@ public class EmailSenderService implements EmailSenderUseCase {
     private EmailSenderGateway emailSenderGateway;
 
     @Autowired
-    public EmailSenderService emailSenderService(EmailSenderGateway emailSenderGateway) {
+    public void emailSenderService(EmailSenderGateway emailSenderGateway) {
         this.emailSenderGateway = emailSenderGateway;
     }
 
     @Override
     public void sendEmail(String to, String subject, String body) {
+
         emailSenderGateway.sendEmail(to, subject, body);
     }
 }
